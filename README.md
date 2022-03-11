@@ -5,12 +5,12 @@
 
 ## Задачи
 
-- [Покер - 5 карт одинаковые](./src/Poker.java)
-- [Номера страниц - сумасшедший](./src/PageFromAmountOfLiterals.java)
-- [Забавная игра - сдвиг](./src/ShiftGame.java)
-- [Шестерёнки](./src/Gears.java)
-- [Минимальная стоимость проезда](./src/MinimalCostOfTrip.java)
-- [Ферзя в угол](./src/QueenToCorner.java)
+- [Покер - 5 карт одинаковые](./src/homework/Poker/Main.java)
+- [Номера страниц - сумасшедший](./src/homework/PageFromAmountOfLiterals/Main.java)
+- [Забавная игра - сдвиг](./src/homework/ShiftGame)
+- [Шестерёнки](./src/homework/Gears/Main.java)
+- [Минимальная стоимость проезда](./src/homework/MinimalConstOfTrip)
+- [Ферзя в угол](./src/homework/QueenToCorner)
 
 ### Ваши задачи
 
