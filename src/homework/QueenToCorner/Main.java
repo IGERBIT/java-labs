@@ -1,6 +1,8 @@
+package homework.QueenToCorner;
+
 import java.util.Scanner;
 
-public class QueenToCorner {
+public class Main {
     public static int[][] Dirs = {
             //0, 1, 2, 3, 4, 5
             { 1, 2, 3, 0, 4, 5 }, // Forward

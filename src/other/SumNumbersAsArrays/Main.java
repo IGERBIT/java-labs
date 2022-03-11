@@ -1,6 +1,8 @@
+package other.SumNumbersAsArrays;
+
 import java.util.Scanner;
 
-public class SumNumbersAsArrays {
+public class Main {
 
     private static final int NUMBER_BASE = 10;
 

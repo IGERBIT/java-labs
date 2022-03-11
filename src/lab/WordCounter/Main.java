@@ -1,9 +1,11 @@
+package lab.WordCounter;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class WordCounter {
+public class Main {
 
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
@@ -20,9 +22,7 @@ public class WordCounter {
             wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
         }
 
-        wordCount.forEach((word, repeat) -> {
-            System.out.println(word + " " + repeat);
-        });
+        wordCount.forEach((word, repeat) -> System.out.println(word + " " + repeat));
 
     }
 }

@@ -1,7 +1,9 @@
+package lab.SearchVowelsAndConsonantsInSentence;
+
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class SearchVowelsAndConsonantsInSentence {
+public class Main {
 
     private static final String EN_VOWELS = "aeiou";
     private static final String RU_VOWELS = "аоэеиыуёюя";

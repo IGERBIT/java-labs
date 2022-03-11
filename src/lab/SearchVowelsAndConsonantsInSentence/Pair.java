@@ -1,3 +1,5 @@
+package lab.SearchVowelsAndConsonantsInSentence;
+
 public class Pair<A,B> {
     private A first;
     private B second;

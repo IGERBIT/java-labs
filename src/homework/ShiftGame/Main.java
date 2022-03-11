@@ -1,6 +1,8 @@
+package homework.ShiftGame;
+
 import java.util.Scanner;
 
-public class ShiftGame {
+public class Main {
     private static int RightShift(int bitness, int value) {
         int HighBit = (value & 1) << (bitness - 1);
         return (value >>> 1) | HighBit;

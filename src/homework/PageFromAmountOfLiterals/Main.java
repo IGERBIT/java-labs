@@ -1,6 +1,8 @@
+package homework.PageFromAmountOfLiterals;
+
 import java.util.Scanner;
 
-public class PageFromAmountOfLiterals {
+public class Main {
 
     private static final int NumberBase = 10;
 

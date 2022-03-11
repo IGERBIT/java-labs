@@ -1,6 +1,8 @@
+package homework.Gears;
+
 import java.util.Scanner;
 
-public class Gears {
+public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

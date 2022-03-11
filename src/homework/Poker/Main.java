@@ -1,6 +1,8 @@
+package homework.Poker;
+
 import java.util.*;
 
-public class Poker {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         var result = getNameOfCardLayout(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
