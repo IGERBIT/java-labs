@@ -33,13 +33,7 @@ public class DivisionWithoutDivision {
 
         int result = 0;
 
-        int left = 0;
-        int rigth = 0xFFFFFFFF;
-
-        while (rigth - left > 1) {
-
-        }
-
+        // code...
 
 
         return isNegative ? -result : result;

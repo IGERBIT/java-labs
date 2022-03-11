@@ -13,8 +13,6 @@ public class SearchVowelsAndConsonantsInSentence {
 
         var line = scanner.nextLine();
 
-        int i = 1;
-
         for (String sentence : line.split("\\.")) {
             sentence = sentence.trim();
             if (sentence.length() < 1) {
