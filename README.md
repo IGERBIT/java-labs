@@ -11,6 +11,8 @@
 - [Шестерёнки](./src/homework/Gears/Main.java)
 - [Минимальная стоимость проезда](./src/homework/MinimalConstOfTrip)
 - [Ферзя в угол](./src/homework/QueenToCorner)
+- [Ближайщая точка](./src/homework/NearestPoint)
+- [Наибольший перемитр](./src/homework/LongestTriangle)
 
 ### Ваши задачи
 
