@@ -7,7 +7,7 @@ public class Main {
             //0, 1, 2, 3, 4, 5
             { 1, 2, 3, 0, 4, 5 }, // Forward
             { 0, 4, 2, 5, 3, 1 }, // Right
-            { 0, 5, 2, 3, 1, 4 }, // Left
+            { 0, 5, 2, 4, 1, 3 }, // Left
     };
 
     public static int[] makeMove(int[] pos, int[] dir) {
@@ -41,13 +41,13 @@ public class Main {
                     pos = makeMove(pos, Dirs[2]);
                     break;
                 //case "S":
-                case "STOP ":
+                case "STOP":
                     hasStop = true;
                     break;
             }
 
         }
 
-        System.out.print(pos[0]);
+        System.out.println(pos[0]);
     }
 }
