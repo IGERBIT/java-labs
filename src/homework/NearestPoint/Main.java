@@ -19,18 +19,26 @@ public class Main {
 
         center = center.divide(n);
 
-        if (center.getX() == (int) center.getX() && center.getY() == (int) center.getY()) {
-            System.out.println((int) center.getX() + " " + (int) center.getY());
-            return;
+        double minDistance = 0;
+        Point nearestPoint = null;
+
+        for (Point point : points) {
+            var distance = point.subtract(center).length();
+
+            if(nearestPoint == null) {
+                minDistance = distance;
+                nearestPoint = point;
+                continue;
+            }
+
+            if(distance < minDistance) {
+                minDistance = distance;
+                nearestPoint = point;
+            }
         }
 
-        var ceilCenter = new Point(Math.ceil(center.getX()), Math.ceil(center.getY()));
-        var floorCenter = new Point(Math.floor(center.getX()), Math.floor(center.getY()));
-
-        if (totalDistanceToPoints(ceilCenter, points) < totalDistanceToPoints(floorCenter, points)) {
-            System.out.println((int) ceilCenter.getX() + " " + (int) ceilCenter.getY());
-        } else {
-            System.out.println((int) floorCenter.getX() + " " + (int) floorCenter.getY());
+        if(nearestPoint != null) {
+            System.out.println((int) nearestPoint.getX() + " " + (int) nearestPoint.getY());
         }
 
     }
