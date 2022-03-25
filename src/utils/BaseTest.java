@@ -25,17 +25,13 @@ public class BaseTest {
         System.setOut(stdOut);
     }
 
-    protected InputStream textToStream(String str) {
-        return new ByteArrayInputStream(str.getBytes(StandardCharsets.UTF_8));
-    }
-
     protected String crlf2lf(String str) {
-        return str.replaceAll("\\r\\n", "\\n");
+        return str.replaceAll("\\r\\n", "\n");
     }
 
     protected String cleanUpString(String str) {
         str = crlf2lf(str).replaceAll(" +", " ").trim();
-        if (str.endsWith("\\n")) {
+        if (str.endsWith("\n")) {
             str = str.substring(0, str.length() - 2);
         }
         return str;
@@ -71,5 +67,24 @@ public class BaseTest {
         });
 
         assertEquals(cleanUpString(output), cleanUpString(result));
+    }
+
+    protected void testWithStream(InputStream inStream, InputStream outStream, VoidFunction func) throws IOException {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+
+        byte[] buffer = new byte[1024];
+        int length;
+        while ((length = outStream.read(buffer)) != -1) {
+            output.write(buffer, 0, length);
+        }
+
+        final var result = createString(ps -> {
+            System.setIn(inStream);
+            System.setOut(ps);
+
+            func.call();
+        });
+
+        assertEquals(cleanUpString(output.toString(StandardCharsets.UTF_8)), cleanUpString(result));
     }
 }

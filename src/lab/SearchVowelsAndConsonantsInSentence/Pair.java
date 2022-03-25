@@ -1,27 +1,20 @@
 package lab.SearchVowelsAndConsonantsInSentence;
 
-public class Pair<A,B> {
-    private A first;
-    private B second;
+public final class Pair<A, B> {
+    private final A first;
+    private final B second;
 
-    public Pair(A first, B second) {
-        this.first = first;
-        this.second = second;
+    public Pair(A firstValue, B secondValue) {
+        this.first = firstValue;
+        this.second = secondValue;
     }
 
     public A getFirst() {
         return first;
     }
 
-    public void setFirst(A first) {
-        this.first = first;
-    }
-
     public B getSecond() {
         return second;
     }
 
-    public void setSecond(B second) {
-        this.second = second;
-    }
 }
