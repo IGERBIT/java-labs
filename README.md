@@ -13,6 +13,7 @@
 - [Ферзя в угол](./src/homework/QueenToCorner)
 - [Ближайщая точка](./src/homework/NearestPoint)
 - [Наибольший перемитр](./src/homework/LongestTriangle)
+- [Двусвязный список](./src/homework/DoublyLinkedList)
 
 ### Ваши задачи
 
