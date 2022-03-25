@@ -7,27 +7,23 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        var scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        List<String> lines = new ArrayList<>();
+        int n = scanner.nextInt();
 
-        int avgLength = 0;
+        String[] lines = new String[n];
 
-        while (true) {
-            var line = scanner.nextLine().trim();
+        double avgLength = 0;
 
-            var length = line.length();
+        for (int i = 0; i < n; i++) {
+            String line = scanner.nextLine().trim();
 
-            if (length < 1) {
-                break;
-            }
+            avgLength += line.length();
 
-            avgLength += length;
-
-            lines.add(line);
+            lines[i] = (line);
         }
 
-        avgLength /= lines.size();
+        avgLength /= n;
 
         for (String line : lines) {
             if (line.length() >= avgLength) {
