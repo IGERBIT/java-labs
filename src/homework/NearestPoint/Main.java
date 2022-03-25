@@ -19,28 +19,38 @@ public class Main {
 
         center = center.divide(n);
 
-        double minDistance = 0;
-        Point nearestPoint = null;
-
-        for (Point point : points) {
-            var distance = point.subtract(center).length();
-
-            if(nearestPoint == null) {
-                minDistance = distance;
-                nearestPoint = point;
-                continue;
-            }
-
-            if(distance < minDistance) {
-                minDistance = distance;
-                nearestPoint = point;
-            }
+        if (center.getX() == (int) center.getX() && center.getY() == (int) center.getY()) {
+            System.out.println((int) center.getX() + " " + (int) center.getY());
+            return;
         }
 
-        if(nearestPoint != null) {
-            System.out.println((int) nearestPoint.getX() + " " + (int) nearestPoint.getY());
+        Point ceilXceilYCenter = new Point(Math.ceil(center.getX()), Math.ceil(center.getY()));
+        Point floorXfloorYCenter = new Point(Math.floor(center.getX()), Math.floor(center.getY()));
+        Point floorXceilYCenter = new Point(Math.floor(center.getX()), Math.ceil(center.getY()));
+        Point ceilXfloorYCenter = new Point(Math.ceil(center.getX()), Math.floor(center.getY()));
+
+        double ceilXceilYCenterDistance  = totalDistanceToPoints(ceilXceilYCenter, points);
+        double floorXfloorYCenterDistance = totalDistanceToPoints(floorXfloorYCenter, points);
+        double floorXceilYCenterDistance = totalDistanceToPoints(floorXceilYCenter, points);
+        double ceilXfloorYCenterDistance = totalDistanceToPoints(ceilXfloorYCenter, points);
+
+        double minDistance = Math.min(Math.min(ceilXceilYCenterDistance, floorXfloorYCenterDistance), Math.min(floorXceilYCenterDistance, ceilXfloorYCenterDistance));
+
+        if (minDistance == ceilXceilYCenterDistance) {
+            System.out.println((int) ceilXceilYCenter.getX() + " " + (int) ceilXceilYCenter.getY());
+            return;
         }
 
+        if (minDistance == floorXfloorYCenterDistance) {
+            System.out.println((int) floorXfloorYCenter.getX() + " " + (int) floorXfloorYCenter.getY());
+            return;
+        }
+
+        if (minDistance == floorXceilYCenterDistance) {
+            System.out.println((int) floorXceilYCenter.getX() + " " + (int) floorXceilYCenter.getY());
+            return;
+        }
+        System.out.println((int) ceilXfloorYCenter.getX() + " " + (int) ceilXfloorYCenter.getY());
     }
 
     private static double totalDistanceToPoints(Point point, Point[] arr) {

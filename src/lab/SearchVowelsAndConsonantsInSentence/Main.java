@@ -1,6 +1,7 @@
 package lab.SearchVowelsAndConsonantsInSentence;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
@@ -13,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
 
-        var line = scanner.nextLine();
+        String line = scanner.nextLine();
 
         for (String sentence : line.split("\\.")) {
             sentence = sentence.trim();
@@ -21,13 +22,13 @@ public class Main {
                 continue;
             }
 
-            var vowelsAndConsonants = getCountOfVowelsAndConsonants(sentence);
+            SentanceLetters vowelsAndConsonants = getCountOfVowelsAndConsonants(sentence);
 
             System.out.print(sentence);
             System.out.print(". | ");
 
-            int vowels = vowelsAndConsonants.getFirst();
-            int consonants = vowelsAndConsonants.getSecond();
+            int vowels = vowelsAndConsonants.getVowels();
+            int consonants = vowelsAndConsonants.getConsonant();
 
             if (vowels > consonants) {
                 System.out.print("There are more vowels.");
@@ -41,16 +42,16 @@ public class Main {
         }
     }
 
-    public static Pair<Integer, Integer> getCountOfVowelsAndConsonants(String str) {
+    public static SentanceLetters getCountOfVowelsAndConsonants(String str) {
         int vowels = 0;
         int consonants = 0;
 
         final var charPattern = Pattern.compile("[a-zа-яё]", PATTERN_FLAGS);
 
-        var matcher = charPattern.matcher(str);
+        Matcher matcher = charPattern.matcher(str);
 
         while (matcher.find()) {
-            var character = str.substring(matcher.start(), matcher.end());
+            String character = str.substring(matcher.start(), matcher.end());
             if (RU_VOWELS.contains(character) || EN_VOWELS.contains(character)) {
                 vowels++;
             } else {
@@ -58,7 +59,7 @@ public class Main {
             }
         }
 
-        return new Pair<>(vowels, consonants);
+        return new SentanceLetters(vowels, consonants);
     }
 
 }

@@ -3,19 +3,20 @@ package lab.WordCounter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
 
     public static void main(String[] args) {
-        var scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        var str = scanner.nextLine();
+        String str = scanner.nextLine();
 
         Map<String, Integer> wordCount = new HashMap<>();
 
-        var pattern = Pattern.compile("\\w+", Pattern.MULTILINE | Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS | Pattern.UNICODE_CASE);
-        var matcher = pattern.matcher(str);
+        Pattern pattern = Pattern.compile("\\w+", Pattern.MULTILINE | Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS | Pattern.UNICODE_CASE);
+        Matcher matcher = pattern.matcher(str);
 
         while (matcher.find()) {
             var word = str.substring(matcher.start(), matcher.end()).toLowerCase();
@@ -23,6 +24,5 @@ public class Main {
         }
 
         wordCount.forEach((word, repeat) -> System.out.println(word + " " + repeat));
-
     }
 }
