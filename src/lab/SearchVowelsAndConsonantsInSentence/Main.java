@@ -16,7 +16,7 @@ public class Main {
 
         String line = scanner.nextLine();
 
-        for (String sentence : line.split("\\.")) {
+        for (String sentence : line.split("\\.{3}|\\.|\\?|!")) {
             sentence = sentence.trim();
             if (sentence.length() < 1) {
                 continue;
